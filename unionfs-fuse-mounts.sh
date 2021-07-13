@@ -1,4 +1,7 @@
 #!/bin/vbash
+
+# This script logs unionfs-fuse mount point counts. 
+
 source /opt/vyatta/etc/functions/script-template
 
 if [ "$(id -g -n)" != 'vyattacfg' ] ; then
