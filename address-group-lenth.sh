@@ -1,4 +1,7 @@
 #!/bin/vbash
+
+# There is an address-group called BRUTERS. This script is just parse the lenth of it and log this as a message. 
+
 source /opt/vyatta/etc/functions/script-template
 
 if [ "$(id -g -n)" != 'vyattacfg' ] ; then
