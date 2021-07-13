@@ -1,4 +1,8 @@
 #!/bin/vbash
+
+# This script parses log messages with "Failed password for invalid user" and "Failed password for root" mesasges, extract IP addresses and updated the address-group called BRUTERS.
+# The address group will be added to block SSH Brute-force
+
 source /opt/vyatta/etc/functions/script-template
 
 if [ "$(id -g -n)" != 'vyattacfg' ] ; then
