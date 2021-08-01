@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This is a wrapper to query inventtory API described in https://github.com/MelHiour/simple_api_inventory
+# This is a wrapper to query inventory API described in https://github.com/MelHiour/simple_api_inventory
 # To make it work you need to
 # - Have .netrc in your home directory
 #    $ cat .netrc 
@@ -11,7 +11,7 @@
 # - Fix permissions 
 #    chmod +x /config/scripts/init.sh
 # - Make a simlink 
-#    sudo ln-s /config/scripts/inv.sh /usr/local/bin/inv
+#    sudo ln -s /config/scripts/inv.sh /usr/local/bin/inv
 #
 # Enjoy!
 # $ inv get /
@@ -21,6 +21,14 @@
 #            "thiem"
 #        ]]
 #  }
+# Usage:
+# inv [get|post|put|delete] [json_data(put&post only)] [endpoint]
+#
+# Exampes:
+# inv get /
+# inv put '{"type":"VM","os":"Centos"}' /whale
+# inv delete /whale
+
 
 _INVENTORY_PATH=https://whale:3000/inventory
 
