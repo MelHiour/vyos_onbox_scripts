@@ -7,7 +7,7 @@
 #    machine whale
 #	    login melhiour
 #	    password dfsjhsjdhfjd87erk
-# - Store this script in /config/scripts/init.sh
+# - Store this script in /config/scripts/init.sh (if you use VyOS)
 # - Fix permissions 
 #    chmod +x /config/scripts/init.sh
 # - Make a simlink 
@@ -19,16 +19,16 @@
 #        [
 #            "novac",
 #            "thiem"
-#        ]]
-#  }
+#        ]
+#    ]
+#   }
 # Usage:
 # inv [get|post|put|delete] [json_data(put&post only)] [endpoint]
 #
 # Exampes:
 # inv get /
 # inv put '{"type":"VM","os":"Centos"}' /whale
-# inv delete /whale
-
+# inv delete /novac
 
 _INVENTORY_PATH=https://whale:3000/inventory
 
