@@ -39,5 +39,7 @@ elif [ "$1" == "post" ]; then
 elif [ "$1" == "put" ]; then
     curl -kn --silent --header "Content-Type:application/json" --request PUT --data "$2" $_INVENTORY_PATH$3 | python -m json.tool            
 elif [ "$1" == "delete" ]; then
-    curl -kn --silent --header "Content-Type:application/json" --request DELETE $_INVENTORY_PATH$2 | python -m json.tool            
+    curl -kn --silent --header "Content-Type:application/json" --request DELETE $_INVENTORY_PATH$2 | python -m json.tool    
+else
+    echo 'Operation is not supported. Please use [get|put|delete|post]'
 fi
