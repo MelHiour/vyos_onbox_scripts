@@ -1,13 +1,15 @@
 #!/bin/vbash
 
-# This script logs unionfs-fuse mount point counts. 
+# This script logs number of unionfs-fuse mount points.
 
 source /opt/vyatta/etc/functions/script-template
 
-if [ "$(id -g -n)" != 'vyattacfg' ] ; then
-    exec sg vyattacfg -c "/bin/vbash $(readlink -f $0) $@"
+RUN_GRP='vyattacfg'
+
+if [ "$(id -g -n)" != "${RUN_GRP}" ] ; then
+    exec sg "${RUN_GRP}" -c "/bin/vbash $(readlink -f $0) $@"
 fi
 
-_LENTH=$(ps aux | grep unionfs-fuse | wc -l)
-logger "Number of unionfs-fuse mount points is $_LENTH"
+len=$(ps aux | grep -Fc unionfs-fuse)
+logger "Number of unionfs-fuse mount points is ${len}"
 exit
